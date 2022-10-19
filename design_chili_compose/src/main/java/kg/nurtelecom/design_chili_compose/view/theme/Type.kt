@@ -1,4 +1,4 @@
-package kg.nurtelecom.composedesignchili.ui.theme
+package kg.nurtelecom.design_chili_compose.view.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

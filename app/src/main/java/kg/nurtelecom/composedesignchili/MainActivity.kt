@@ -10,7 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import kg.nurtelecom.composedesignchili.ui.theme.ComposeDesignChiliTheme
+import kg.nurtelecom.design_chili_compose.view.BaseCellView
+import kg.nurtelecom.design_chili_compose.view.theme.ComposeDesignChiliTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,10 +20,11 @@ class MainActivity : ComponentActivity() {
             ComposeDesignChiliTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    BaseCellView(title = "Показать отчеты") {
+                        
+                    }
                 }
             }
         }
