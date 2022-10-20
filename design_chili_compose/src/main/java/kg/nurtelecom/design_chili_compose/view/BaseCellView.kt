@@ -1,7 +1,10 @@
 package kg.nurtelecom.design_chili_compose.view
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
@@ -16,18 +19,20 @@ import kg.nurtelecom.design_chili_compose.view.theme.Shapes
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun BaseCellView(title: String, onClick: () -> Unit) {
+fun BaseCellView(title: String, onClick: (() -> Unit)? = null) {
     Card(onClick = {
-        onClick()
+        onClick?.invoke()
     },
         backgroundColor = Color.White,
         modifier = Modifier
-            .size(600.dp, 50.dp)
+            .wrapContentSize()
             .padding(4.dp),
         elevation = 0.dp,
         shape = Shapes.large
     ) {
-        Row(modifier = Modifier.fillMaxSize().padding(8.dp)) {
+        Row(modifier = Modifier
+            .wrapContentSize()
+            .padding(8.dp)) {
             Text(text = title)
             Image(
                 painter = painterResource(id = R.drawable.ic_baseline_chevron_right_24),

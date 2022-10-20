@@ -5,37 +5,31 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
-
-private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
-)
-
-private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
-
-    /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
-)
+import androidx.compose.ui.res.colorResource
+import com.design.chili.R
 
 @Composable
 fun ComposeDesignChiliTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
+    val lightColorPalette = lightColors(
+        primary = colorResource(id = R.color.gray_4),
+        primaryVariant = colorResource(id = R.color.black_1),
+        secondary = colorResource(id = R.color.magenta_1),
+        secondaryVariant = colorResource(id = R.color.gray_2),
+        onPrimary = colorResource(id = R.color.black_5)
+    )
+    val darkColorPalette = darkColors(
+        surface = colorResource(id = R.color.black_2),
+        primaryVariant = colorResource(id = R.color.white_1),
+        secondary = colorResource(id = R.color.magenta_1),
+        secondaryVariant = colorResource(id = R.color.black_4)
+    )
     val colors = if (darkTheme) {
-        DarkColorPalette
+        darkColorPalette
     } else {
-        LightColorPalette
+        lightColorPalette
     }
 
     MaterialTheme(
