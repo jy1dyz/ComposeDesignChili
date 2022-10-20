@@ -26,19 +26,19 @@ fun BaseCellView(title: String, onClick: (() -> Unit)? = null) {
         backgroundColor = Color.White,
         modifier = Modifier
             .wrapContentSize()
-            .padding(4.dp),
+            .padding(8.dp),
         elevation = 0.dp,
         shape = Shapes.large
     ) {
         Row(modifier = Modifier
             .wrapContentSize()
             .padding(8.dp)) {
-            Text(text = title)
+            Text(text = title, modifier = Modifier.align(Alignment.CenterVertically))
             Image(
                 painter = painterResource(id = R.drawable.ic_baseline_chevron_right_24),
                 contentDescription = "Image",
                 alignment = Alignment.CenterEnd,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().align(Alignment.CenterVertically)
             )
         }
     }
