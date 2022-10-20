@@ -32,7 +32,7 @@ fun BaseCellView(title: String, onClick: (() -> Unit)? = null) {
     ) {
         Row(modifier = Modifier
             .wrapContentSize()
-            .padding(8.dp)) {
+            .padding(12.dp)) {
             Text(text = title, modifier = Modifier.align(Alignment.CenterVertically))
             Image(
                 painter = painterResource(id = R.drawable.ic_baseline_chevron_right_24),
